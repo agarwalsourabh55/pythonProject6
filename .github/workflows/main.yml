@@ -17,7 +17,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install  kedro_iris-0.1-py3-none-any.whl
+        pip install  kedro_tutorial-0.1-py3-none-any.whl
     - name: Lint with flake8
       run: |
         pip install flake8
