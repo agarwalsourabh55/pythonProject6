@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Predict Salary Analysis</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}" method="post">
+    	<input type="text" name="engines" placeholder="engines" required="required" />
+        <input type="text" name="passenger_capacity" placeholder="passenger_capacity" required="required" />
+	<input type="text" name="crew" placeholder="crew" required="required" />
+	<input type="text" name="d_check_complete" placeholder="d_check_complete" required="required" />
+	<input type="text" name="moon_clearance_complete" placeholder="moon_clearance_complete" required="required" />
+	<input type="text" name="iata_approved" placeholder="iata_approved" required="required" />
+	<input type="text" name="company_rating" placeholder="company_rating" required="required" />
+	<input type="text" name="review_scores_rating" placeholder="review_scores_rating" required="required" />
+	
+	
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
