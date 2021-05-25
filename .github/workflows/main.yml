@@ -27,7 +27,6 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Running pipelines 
       run: |
-       export PYTHONPATH=kedro-iris
        python -m kedro_tutorial
     - name: Deploy to Heroku
       env:
